@@ -15,37 +15,26 @@
 	</style>
 
 <div id="root">
+<tabs>
+	<tab name="Pictures" :selected="true" symbol-class="fa fa-image">
+		<h1>Some funny pictures of cats</h1>
+	</tab>
 
-<div class="container">
-		<div class="tabs is-centered is-boxed is-medium">
-		  <ul>
-		    <li class="is-active">
-		      <a>
-		        <span class="icon is-small"><i class="fa fa-image"></i></span>
-		        <span>Pictures</span>
-		      </a>
-		    </li>
-		    <li>
-		      <a>
-		        <span class="icon is-small"><i class="fa fa-music"></i></span>
-		        <span>Music</span>
-		      </a>
-		    </li>
-		    <li>
-		      <a>
-		        <span class="icon is-small"><i class="fa fa-film"></i></span>
-		        <span>Videos</span>
-		      </a>
-		    </li>
-		    <li>
-		      <a>
-		        <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
-		        <span>Documents</span>
-		      </a>
-		    </li>
-		  </ul>
-		</div>
-	</div>
+	<tab name="Music" symbol-class="fa fa-music">
+		<h1>Some well sounding music</h1>
+	</tab>
+
+	<tab name="Videos" symbol-class="fa fa-film">
+		<h1>Some interesting videos you'll want to see</h1>
+	</tab>
+
+	<tab name="Documents" symbol-class="fa fa-file-text-o">
+		<h1>We don't need no.... documentation....</h1>
+	</tab>
+</tabs>
+
+
+
 	
 
 </div> <!-- End Root div-->
