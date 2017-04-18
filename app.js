@@ -5,7 +5,7 @@ Vue.component('tabs', {
 				  <ul>
 					  <li v-for="tab in tabs">
 					    <a>
-								<i :class="tab.symbolClass"></i>
+								<span class="icon is-small"><i :class="tab.symbolClass"></i></span>
 								<span>{{tab.name}}</span>
 					  	</a>
 					  
