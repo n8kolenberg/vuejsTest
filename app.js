@@ -3,8 +3,8 @@ Vue.component('tabs', {
 		<div class="container">
 			<div class="tabs is-centered is-boxed is-medium">
 				  <ul>
-					  <li v-for="tab in tabs">
-					    <a>
+					  <li v-for="tab in tabs" :class="{'is-active': tab.isActive}">
+					    <a href="#" @click=selectTab(tab)>
 								<span class="icon is-small"><i :class="tab.symbolClass"></i></span>
 								<span>{{tab.name}}</span>
 					  	</a>
@@ -21,13 +21,21 @@ Vue.component('tabs', {
 	`,
 
 props: {
-	class: {}
+	class: {},
 },
 
 data() {
 	return {
 		tabs: [],
 	};
+},
+
+methods: {
+	selectTab(selectedTab) {
+ 		this.tabs.forEach(tab => {
+ 			tab.isActive = (tab.name == selectedTab.name)
+ 		});
+	}
 },
 
 	created() {
@@ -40,11 +48,23 @@ data() {
 
 Vue.component('tab', {
 	template: `
-		<div><slot></slot></div>
+		<div v-show="isActive"><slot></slot></div>
 	`,
+
+	data() {
+		return {
+			isActive: false
+		};
+	},
+
+	mounted() {
+		this.isActive = this.selected;
+	},
+
 	props: {
 		name: {required: true},
-		symbolClass: {required: true}
+		symbolClass: {required: true},
+		selected: {default: false}
 	},
 
 });
@@ -59,4 +79,4 @@ var app = new Vue({
 
 	},
 
-})
+});
