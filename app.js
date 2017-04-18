@@ -5,7 +5,7 @@ Vue.component('tabs', {
 				  <ul>
 					  <li v-for="tab in tabs">
 					    <a>
-								<i :class="{{tab.symbol-class}}"></i>
+								<i :class="tab.symbolClass"></i>
 								<span>{{tab.name}}</span>
 					  	</a>
 					  
@@ -26,13 +26,13 @@ props: {
 
 data() {
 	return {
-		tabs: []
-
+		tabs: [],
 	};
 },
 
 	created() {
 		this.tabs = this.$children;
+
 	},
 
 });
